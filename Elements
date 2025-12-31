@@ -1,0 +1,24 @@
+https://parabank.parasoft.com/parabank/index.htm (Bank)
+
+package automation;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Sewebelements {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver browser=new ChromeDriver();
+		browser.get("https://parabank.parasoft.com/parabank/index.htm");
+		WebElement user_textfield = browser.findElement(By.name("user-name"));
+		user_textfield.sendKeys("testuser");
+		WebElement pass_textfield = browser.findElement(By.name("input[placeholder='Password']"));
+		pass_textfield.sendKeys("testpass");
+		WebElement login =browser.findElement(By.xpath("//input[@value='Login']"));//WebElement login =browser.findElement(By.className(""));
+		login.click();
+     browser.close();   
+	}
+
+}
